@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": ""
+    "dev": "nodemon --exec babel-node server"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,14 @@
   "bugs": {
     "url": "https://github.com/FIN443/instaclone-backend/issues"
   },
-  "homepage": "https://github.com/FIN443/instaclone-backend#readme"
+  "homepage": "https://github.com/FIN443/instaclone-backend#readme",
+  "dependencies": {
+    "apollo-server": "^2.25.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.5",
+    "@babel/node": "^7.18.5",
+    "@babel/preset-env": "^7.18.2",
+    "nodemon": "^2.0.16"
+  }
 }

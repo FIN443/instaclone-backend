@@ -19,8 +19,12 @@
   },
   "homepage": "https://github.com/FIN443/instaclone-backend#readme",
   "dependencies": {
+    "@graphql-tools/load-files": "^6.5.4",
+    "@graphql-tools/merge": "^8.2.14",
+    "@graphql-tools/schema": "^8.3.14",
     "@prisma/client": "^3.15.2",
-    "apollo-server": "^2.25.2"
+    "apollo-server": "^2.25.2",
+    "graphql-tools": "^8.2.12"
   },
   "devDependencies": {
     "@babel/core": "^7.18.5",

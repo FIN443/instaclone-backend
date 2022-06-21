@@ -5,7 +5,7 @@ export default {
   Mutation: {
     createAccount: async (
       _,
-      { firstName, lastName, userName, email, password }
+      { firstName, lastName, username, email, password }
     ) => {
       try {
         // check if username or email are already on DB.
@@ -13,7 +13,7 @@ export default {
           where: {
             OR: [
               {
-                userName,
+                username,
               },
               {
                 email,
@@ -31,7 +31,7 @@ export default {
         // save and return the user
         return client.user.create({
           data: {
-            userName,
+            username,
             email,
             firstName,
             lastName,

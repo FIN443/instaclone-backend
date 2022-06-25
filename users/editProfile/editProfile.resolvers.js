@@ -1,10 +1,11 @@
 import bcrypt from "bcrypt";
+import GraphQLUpload from "graphql-upload/GraphQLUpload.js";
 import client from "../../client";
 import { protectedResolver } from "../users.utils";
 
 const resolverFn = async (
   _,
-  { firstName, lastName, username, email, password: newPassword },
+  { firstName, lastName, username, email, password: newPassword, bio },
   { loggedInUser }
 ) => {
   // if server context has user get user
@@ -27,6 +28,7 @@ const resolverFn = async (
       lastName,
       username,
       email,
+      bio,
       ...(hashPassword && { password: hashPassword }),
     },
   });
@@ -48,4 +50,5 @@ export default {
     // protectedResolver() is verify user
     editProfile: protectedResolver(resolverFn),
   },
+  Upload: GraphQLUpload,
 };

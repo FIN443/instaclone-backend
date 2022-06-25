@@ -4,6 +4,12 @@ import schema from "./schema";
 
 const server = new ApolloServer({
   schema,
+  // Get token from request headers
+  context: ({ req }) => {
+    return {
+      token: req.headers.token,
+    };
+  },
 });
 
 const PORT = process.env.PORT;
